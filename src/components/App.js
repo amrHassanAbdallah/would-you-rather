@@ -12,6 +12,7 @@ import LoadingBar from 'react-redux-loading'
 import NavBar from "./NavBar";
 import { connect } from 'react-redux'
 import Profile from "./profile";
+import NewQuestion from "./new-question";
 
 function receiveDataAction(users) {
     return {
@@ -65,6 +66,11 @@ class App extends React.Component {
                                 <Route exact path='/profile'
                                        render={() =>
                                            <Profile />}>
+                                </Route>
+
+                                <Route exact path='/questions/new'
+                                       render={() =>
+                                           <NewQuestion />}>
                                 </Route>
                             </div>
                     </div>

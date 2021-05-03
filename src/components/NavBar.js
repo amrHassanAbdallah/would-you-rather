@@ -26,6 +26,9 @@ class NavBar extends React.Component {
                     <Link to="/">
                         <Nav.Link href="#home">Home</Nav.Link>
                     </Link>
+                    <Link to="/questions/new">
+                        <Nav.Link href="questions/new">New question</Nav.Link>
+                    </Link>
 
                 </Nav>
 

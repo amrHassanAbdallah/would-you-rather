@@ -157,7 +157,7 @@ export function _saveQuestion (question) {
         ...questions,
         [formattedQuestion.id]: formattedQuestion
       }
-      
+      console.log("inside the data api",authedUser,users)
       users = {
         ...users,
         [authedUser]: {
