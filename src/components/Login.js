@@ -2,19 +2,39 @@ import React from 'react';
 import { Container, Form} from 'react-bootstrap';
 import {newUserLogin} from "../actions/user";
 import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
 
 
 class Login extends React.Component {
+    state = {
+        redirect: false
+    }
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
+    }
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/profile' />
+        }
+    }
+
     onChangeHandler = (event) => {
         console.log(event.target.value)
         const { dispatch } = this.props
         dispatch(newUserLogin(event.target.value))
+        this.setRedirect()
+
     }
     render() {
         const {users,authedUser} = this.props
         console.log(users,authedUser)
         return (
             <Container className="justify-content-md-center">
+                {this.renderRedirect()}
+
                 {this.props.loading  && (
                     <span>loading...</span>
                 )}
@@ -27,8 +47,8 @@ class Login extends React.Component {
                         </h2>
                         <Form className="justify-content-md-center">
                             <Form.Group controlId="exampleForm.ControlSelect2">
-                                <Form.Control as="select" custom  onChange={this.onChangeHandler}>
-                                    <option selected="selected"> select a user</option>
+                                <Form.Control as="select" custom  onChange={this.onChangeHandler} value="none">
+                                    <option value="none"> select a user</option>
                                     {
                                         Object.keys(users).map((user) => (
 

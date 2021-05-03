@@ -1,4 +1,4 @@
-import React,{Component,Fragment } from 'react';
+import React, {Fragment} from 'react';
 import '../App.css';
 import {
     BrowserRouter as Router,
@@ -11,6 +11,7 @@ import {RECEIVE_DATA} from "../actions/users";
 import LoadingBar from 'react-redux-loading'
 import NavBar from "./NavBar";
 import { connect } from 'react-redux'
+import Profile from "./profile";
 
 function receiveDataAction(users) {
     return {
@@ -37,8 +38,6 @@ class App extends React.Component {
 
 
     render() {
-        const {users, loading, user} = this.props
-        console.log(user)
         return (
             <Router>
                 <Fragment>
@@ -51,23 +50,24 @@ class App extends React.Component {
                 <div className="app">
                     <LoadingBar/>
                     <NavBar/>
-                    <div className='container'>
-                        {this.props.loading === true
-                            ? null
-                            :
                             <div>
                                 <Route exact path='/login'
-                                       component={() => {
+                                       render={() => {
                                            return <Login/>
                                        }}>
 
                                 </Route>
-                                <Route path="/" component={() => {
-                                    return <Home />
-                                }}> </Route>
-                            </div>}
+                                <Route exact path='/'
+                                       render={() =>
+                                           <Home />}>
+                                </Route>
+
+                                <Route exact path='/profile'
+                                       render={() =>
+                                           <Profile />}>
+                                </Route>
+                            </div>
                     </div>
-                </div>
                 </Fragment>
             </Router>
         );
