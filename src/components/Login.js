@@ -28,6 +28,7 @@ class Login extends React.Component {
                         <Form className="justify-content-md-center">
                             <Form.Group controlId="exampleForm.ControlSelect2">
                                 <Form.Control as="select" custom  onChange={this.onChangeHandler}>
+                                    <option selected="selected"> select a user</option>
                                     {
                                         Object.keys(users).map((user) => (
 
