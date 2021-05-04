@@ -29,6 +29,9 @@ class NavBar extends React.Component {
                     <Link to="/questions/new" className="nav-link">
                        New question
                     </Link>
+                    <Link to="/leader-board" className="nav-link">
+                        Leader Board
+                    </Link>
 
                 </Nav>
 

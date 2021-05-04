@@ -12,6 +12,7 @@ import {connect} from 'react-redux'
 import Profile from "./profile";
 import NewQuestion from "./new-question";
 import {handleInitialData} from "../actions/shared";
+import LeaderBoard from "./leader-board";
 
 
 class App extends React.Component {
@@ -55,6 +56,10 @@ class App extends React.Component {
                             <Route exact path='/questions/new'
                                    render={() =>
                                        <NewQuestion/>}>
+                            </Route>
+                            <Route exact path='/leader-board'
+                                   render={() =>
+                                       <LeaderBoard/>}>
                             </Route>
                         </div>
 

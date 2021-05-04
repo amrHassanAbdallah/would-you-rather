@@ -1,28 +1,26 @@
 import React from 'react';
 import { Container} from 'react-bootstrap';
 import {connect} from "react-redux";
+import LeaderBoardUser from "./leader-board-user";
+import {Redirect} from "react-router-dom";
 
 class Profile extends React.Component{
     render() {
-        const {users,authedUser} = this.props
-        console.log("inside the profile",authedUser)
+        const {authedUser} = this.props
+
+        let redirect = authedUser === null
         return (
-            <Container className="justify-content-md-center">
+                <div>
+                    {redirect === true ? <Redirect to='/login' />:
+                        <Container className="container col-md-3">
+                            <div className="justify-content-center">
+                                <LeaderBoardUser id={authedUser} />
 
-                {this.props.loading  && (
-                    <span>loading...</span>
-                )}
-                {authedUser != null ?
-                    <h2>Logged in as {users[authedUser].name}</h2>
-                    :
-                    <div>
-                        <h2>
-                            should redirect
-                        </h2>
-                    </div>
-                }
+                            </div>
 
-            </Container>
+                        </Container>}
+                </div>
+
         )
     }
 }
