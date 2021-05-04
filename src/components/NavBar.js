@@ -18,16 +18,16 @@ class NavBar extends React.Component {
         console.log("before the render", authedUser, users)
         return (
             <Navbar bg="light" variant="light">
-                <Link to="/">
-                    <Navbar.Brand href="#home">Would you rather?</Navbar.Brand>
+                <Link to="/" className="navbar-brand">
+                    Would you rather?
                 </Link>
 
                 <Nav className="mr-auto">
-                    <Link to="/">
-                        <Nav.Link href="#home">Home</Nav.Link>
+                    <Link to="/" className="nav-link">
+                        Home
                     </Link>
-                    <Link to="/questions/new">
-                        <Nav.Link href="questions/new">New question</Nav.Link>
+                    <Link to="/questions/new" className="nav-link">
+                       New question
                     </Link>
 
                 </Nav>

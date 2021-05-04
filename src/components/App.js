@@ -25,7 +25,6 @@ class App extends React.Component {
         return (
             <Router>
                 <Fragment>
-                    <LoadingBar/>
 
                     <link
                         rel="stylesheet"
@@ -35,6 +34,7 @@ class App extends React.Component {
                     />
                     <div className="app">
                         <NavBar/>
+                        <LoadingBar/>
                         <div>
                             <Route exact path='/login'
                                    render={() => {

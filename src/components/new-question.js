@@ -48,9 +48,9 @@ class NewQuestion extends React.Component {
                     <Card.Body>
                         <Form className='new-tweet' onSubmit={this.handleSubmit}>
                         <Card.Title>Would you rather__</Card.Title>
-                        <Card.Text>
+                        <div as='div'>
                             Complete the question
-                        </Card.Text>
+                        </div>
                             <Form.Control id='firstOption'
                                 placeholder="Enter Option One text here"
                                 value={optionOne}
@@ -63,9 +63,9 @@ class NewQuestion extends React.Component {
                                     {tweetLeft}
                                 </div>
                             )}
-                            <Card.Text className='text-center pt-2'>
+                            <div className='text-center pt-2'>
                                 Or
-                            </Card.Text>
+                            </div>
 
                             <Form.Control
                                 id='secOption'

@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 class Home extends React.Component{
     render() {
         const {id,questions} = this.props
+        console.log("questions",questions)
         return (
            <div className="container col-md-8">
                {Object.keys(questions).map((question_id)=>(
