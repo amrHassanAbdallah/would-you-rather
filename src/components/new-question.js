@@ -28,7 +28,8 @@ class NewQuestion extends React.Component {
         dispatch(handleAddQuestion(optionOne, optionTwo))
 
         this.setState(() => ({
-            text: '',
+            optionOne: '',
+            optionTwo: '',
         }))
     }
 

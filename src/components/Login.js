@@ -30,7 +30,6 @@ class Login extends React.Component {
     }
     render() {
         const {users,authedUser} = this.props
-        console.log(users,authedUser)
         return (
             <Container className="justify-content-md-center">
                 {this.renderRedirect()}
