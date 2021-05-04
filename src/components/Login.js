@@ -17,7 +17,7 @@ class Login extends React.Component {
     }
     renderRedirect = () => {
         if (this.state.redirect) {
-            return <Redirect to='/profile' />
+            return <Redirect to='/' />
         }
     }
 
@@ -34,9 +34,6 @@ class Login extends React.Component {
             <Container className="justify-content-md-center">
                 {this.renderRedirect()}
 
-                {this.props.loading  && (
-                    <span>loading...</span>
-                )}
                 {authedUser != null ?
                 <h2>Logged in as {users[authedUser].name}</h2>
                 :

@@ -25,7 +25,7 @@ export default function questions (state = {}, action) {
                    },
                    [theOtherOption]: {
                        ...state[qid][theOtherOption],
-                       votes: state[qid][theOtherOption].votes.filter(id=>id!=authedUser)
+                       votes: state[qid][theOtherOption].votes.filter(id=>id!==authedUser)
                    }
 
                }

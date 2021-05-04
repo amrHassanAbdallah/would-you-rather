@@ -30,14 +30,18 @@ class NewQuestion extends React.Component {
         this.setState(() => ({
             optionOne: '',
             optionTwo: '',
+            toHome:true
         }))
     }
 
     render() {
         const {optionOne, optionTwo, toHome} = this.state
-
+        const {authedUser} = this.props
         if (toHome === true) {
             return <Redirect to='/'/>
+        }
+        if (!authedUser){
+            return <Redirect to='/login'/>
         }
 
         const tweetLeft = 280 - optionOne.length

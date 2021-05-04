@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, Container, Form,Badge} from 'react-bootstrap';
+import {Button, Card,Badge} from 'react-bootstrap';
 import {connect} from "react-redux";
 
 class LeaderBoardUser extends React.Component {

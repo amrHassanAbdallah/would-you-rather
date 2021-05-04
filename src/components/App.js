@@ -1,8 +1,9 @@
 import React, {Fragment} from 'react';
 import '../App.css';
 import {
-    BrowserRouter as Router,
+    BrowserRouter as Router, Redirect,
     Route,
+    Switch
 } from 'react-router-dom';
 import Login from "./Login";
 import Home from "./Home";
@@ -13,6 +14,7 @@ import Profile from "./profile";
 import NewQuestion from "./new-question";
 import {handleInitialData} from "../actions/shared";
 import LeaderBoard from "./leader-board";
+import SinglePostDetails from "./single-post-details";
 
 
 class App extends React.Component {
@@ -43,24 +45,29 @@ class App extends React.Component {
                                    }}>
 
                             </Route>
+
                             <Route exact path='/'
                                    render={() =>
                                        <Home/>}>
                             </Route>
+
 
                             <Route exact path='/profile'
                                    render={() =>
                                        <Profile/>}>
                             </Route>
 
-                            <Route exact path='/questions/new'
+                            <Route exact path='/add'
                                    render={() =>
                                        <NewQuestion/>}>
                             </Route>
-                            <Route exact path='/leader-board'
+                            <Route exact path='/leaderboard'
                                    render={() =>
                                        <LeaderBoard/>}>
                             </Route>
+                            <Switch>
+                                <Route path="/questions/:id" component={SinglePostDetails} />
+                            </Switch>
                         </div>
 
                     </div>

@@ -198,7 +198,7 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
           },
           [theOtherOption]: {
             ...questions[qid][theOtherOption],
-            votes: questions[qid][theOtherOption].votes.filter(id=>id!=authedUser)
+            votes: questions[qid][theOtherOption].votes.filter(id=>id!==authedUser)
           }
         }
       }
