@@ -1,7 +1,6 @@
 import React from 'react';
-import {Button, Card, Container, Form} from 'react-bootstrap';
+import {Button, Card, Container, Form,Badge} from 'react-bootstrap';
 import {connect} from "react-redux";
-import {addVote, handleAddVote} from "../actions/questions";
 
 class LeaderBoardUser extends React.Component {
 
@@ -20,7 +19,11 @@ class LeaderBoardUser extends React.Component {
                                 Created questions: {users[id].questions.length}
                         </div>
                         <div className="col-md-4">
-                            Score: {Object.keys(users[id].answers).length + users[id].questions.length }
+                            <Button variant="primary">
+                                Score <Badge variant="warning"> {Object.keys(users[id].answers).length + users[id].questions.length }</Badge>
+                                <span className="sr-only">Total questions and answers</span>
+                            </Button>
+
                         </div>
                     </div>
                 </Card.Body>
