@@ -5,21 +5,20 @@ import {connect} from "react-redux";
 
 class Home extends React.Component{
     render() {
-        const {id,questions} = this.props
-        console.log("questions",questions)
+        const {questions,sortedQuestions} = this.props
         return (
            <div className="container col-md-8">
-               {Object.keys(questions).map((question_id)=>(
+               {sortedQuestions.map((question_id)=>(
                    <Question key={question_id} id={question_id} />
                ))}
            </div>
         );
     }
 }
-function mapStateToProps ({users,questions }) {
+function mapStateToProps ({questions }) {
     return {
         questions,
-        users,
+        sortedQuestions:Object.keys(questions).sort((a,b)=>questions[b].timestamp - questions[a].timestamp)
     }
 }
 
